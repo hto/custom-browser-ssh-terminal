@@ -91,6 +91,11 @@ func handleMessages() {
 }
 
 func cmdExec(cmd string) string {
+
+	if cmd == "help" {
+		return helpResponse()
+	}
+
 	s := strings.Split(cmd, " ")
 	if len(s) > 1 {
 		server := findServer(s[0])
@@ -104,6 +109,7 @@ func cmdExec(cmd string) string {
 		}
 		return sshCmd(server, command)
 	}
+
 	return "err"
 }
 
@@ -130,7 +136,16 @@ func findCmd(command string) config.Command {
 }
 
 func helpResponse() string {
-	response := "server command"
+	var response string
+	response += "\n # SERVERS \n"
+	for _, s := range configServer.Server {
+		response += " * [" + s.Name + "]" + " " + s.Description + " \n"
+	}
+
+	response += "\n # COMMANDS \n"
+	for _, c := range configCommand.Command {
+		response += " * [" + c.ShortCmd + "]" + " " + c.Description + " \n"
+	}
 
 	return response
 }
