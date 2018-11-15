@@ -1,0 +1,18 @@
+# Example Custom Command List, Multiple Schame & Custom Command
+
+[[Command]]
+shortcmd = "lstatus"
+description = "Litespeed Service Status" 
+realcmd = "service lsws status"
+
+[[Command]]
+shortcmd = "glast"
+description = "Project Git Last Commit"
+realcmd = "cd /usr/local/lsws/DEFAULT/html && git rev-parse --verify HEAD"
+
+[[Command]]
+shortcmd = "ferror"
+description = "Project Fatal Errors.."
+realcmd = "cat /usr/local/lsws/logs/error.log |grep Fatal"
+
+#.... You are unlimited ...

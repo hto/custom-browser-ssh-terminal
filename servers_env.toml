@@ -1,0 +1,17 @@
+# Example Server List, Multiple Schame & Server
+
+[[Server]]
+Name = "dev"
+Description = "Browser Dev Server"
+HostName = "browser.dev"
+UserName = "root"
+Port = "22"
+Password = "123456"
+
+[[Server]]
+Name = "hto"
+Description = "Hto Git Server"
+HostName = "git.hto.com"
+UserName = "root"
+Port = "22"
+Password = "123456"
