@@ -1,7 +1,7 @@
 package main
 
 import (
-	"mobile-terminal/config"
+	"custom-browser-ssh-terminal/config"
 
 	"golang.org/x/crypto/ssh"
 )

@@ -1,8 +1,8 @@
 package main
 
 import (
+	"custom-browser-ssh-terminal/config"
 	"log"
-	"mobile-terminal/config"
 	"net/http"
 	"strings"
 
