@@ -2,26 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HTO Mobile Terminal - github.com/hto</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="/style.css?5">
-
+    <title>HTO Custom Browser Ssh Terminal - github.com/hto</title>
+    <link rel="stylesheet" href="/css/style.css?1">
 </head>
 <body>
-<main id="app">
-    <div class="window" id="window">
-        <div class="terminal" id="terminal">
-            <p class="log" id="log">
-                > Welcome..
-                <div id="chat-messages" class="card-content" v-html="chatContent"></div>
-            </p>
-        </div>
-    </div>
-    <div>
-        <input type="text" id="cmdBtn" v-model="newMsg" @keyup.enter="send">
-    </div>
-</main>
-<script src="https://unpkg.com/vue@2.1.3/dist/vue.min.js"></script>
-<script src="/app.js?5"></script>
+<pre id="console"></pre>
+<script src="/js/terminal.js?1"></script>
 </body>
 </html>

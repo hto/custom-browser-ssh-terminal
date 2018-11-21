@@ -48,7 +48,7 @@ func main() {
 	go handleMessages()
 
 	log.Println("http server started on :8000")
-	err := http.ListenAndServe(":8000", nil)
+	err := http.ListenAndServe("0.0.0.0:8000", nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
@@ -100,17 +100,17 @@ func cmdExec(cmd string) string {
 	if len(s) > 1 {
 		server := findServer(s[0])
 		if server.Name == "unknown" {
-			return "Server not found!"
+			return " '" + s[0] + "' Server not found!"
 		}
 
 		command := findCmd(s[1])
 		if command.ShortCmd == "unknown" {
-			return "Command Invalid!"
+			return " " + s[1] + " : command not found"
 		}
 		return sshCmd(server, command)
 	}
 
-	return "err"
+	return " " + cmd + " : command not found \n try 'help' command"
 }
 
 func findServer(server string) config.Server {
@@ -146,6 +146,6 @@ func helpResponse() string {
 	for _, c := range configCommand.Command {
 		response += " * [" + c.ShortCmd + "]" + " " + c.Description + " \n"
 	}
-
+	response += "\n"
 	return response
 }
