@@ -2,6 +2,10 @@
 
 > Connect to servers you've tagged with customized commands and complete your actions with shortcuts
 
+# TODO
+
+> Auth ... :)
+
 ## Use
 
 > commands_env.toml >> commands.toml // command list
